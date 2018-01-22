@@ -18,4 +18,4 @@ result = RunChaosGame(5, .4, 100**3)
 ```
 ## Output
 
-![output](/docs/Rplot.png)
+![output](docs/Rplot.png)
