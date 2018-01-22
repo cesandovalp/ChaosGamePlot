@@ -1,0 +1,3 @@
+useDynLib(ChaosGamePlot, .registration=TRUE)
+export(RunChaosGame)
+importFrom(Rcpp, evalCpp)
