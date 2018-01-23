@@ -6,21 +6,22 @@
 using namespace Rcpp;
 
 // ChaosGame
-Rcpp::NumericMatrix ChaosGame(const int n_vertex, const double distance, const double iterations);
-RcppExport SEXP _ChaosGamePlot_ChaosGame(SEXP n_vertexSEXP, SEXP distanceSEXP, SEXP iterationsSEXP) {
+Rcpp::NumericMatrix ChaosGame(const int n_vertex, const double distance, const double iterations, const int rule);
+RcppExport SEXP _ChaosGamePlot_ChaosGame(SEXP n_vertexSEXP, SEXP distanceSEXP, SEXP iterationsSEXP, SEXP ruleSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const int >::type n_vertex(n_vertexSEXP);
     Rcpp::traits::input_parameter< const double >::type distance(distanceSEXP);
     Rcpp::traits::input_parameter< const double >::type iterations(iterationsSEXP);
-    rcpp_result_gen = Rcpp::wrap(ChaosGame(n_vertex, distance, iterations));
+    Rcpp::traits::input_parameter< const int >::type rule(ruleSEXP);
+    rcpp_result_gen = Rcpp::wrap(ChaosGame(n_vertex, distance, iterations, rule));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_ChaosGamePlot_ChaosGame", (DL_FUNC) &_ChaosGamePlot_ChaosGame, 3},
+    {"_ChaosGamePlot_ChaosGame", (DL_FUNC) &_ChaosGamePlot_ChaosGame, 4},
     {NULL, NULL, 0}
 };
 
